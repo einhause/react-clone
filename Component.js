@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo } from './MyReact.js';
 
-export default function Component({ propCount, buttonElem }) {
+// Instance of a React component with mock React hooks built with Vanilla JS
+export default function Component(props) {
+  const { propCount, buttonElem } = props;
   const [count, setCount] = useState(0);
   const propCountDoubled = useMemo(() => {
-    console.log('In Memo');
     return propCount * 2;
   }, [propCount]);
 
